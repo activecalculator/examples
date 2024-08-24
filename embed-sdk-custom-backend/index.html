@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed SDK with custom backend</title>
+  <script>
+    window.interestRateMap = {
+      10: 3.5,
+      15: 3.75,
+      20: 4,
+      30: 4.25
+    }
+    
+    window.addEventListener("activeCalculatorReady", function () {
+      const calculatorInstance = activeCalculator.getInstance("cm01ccea50001mg0chpyziyke");
+      const element = calculatorInstance.getElementInstance("UZ-fD48tjm8OzZNONtkdM");
+
+      element.on("valueChange", function (data) {
+        // console.log("New value:", data.value);
+        // console.log("Calculation data:", data.calculationData);
+        // console.log("Response data:", data.responseData);
+
+        calculatorInstance.setAnswer("lT1VZA1-nCUCnlynX6ids", window.interestRateMap[data.value.value]);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div data-calc-id="cm01ccea50001mg0chpyziyke"></div>
+  <script src="https://app.activecalculator.com/embed.js"></script>
+</body>
+</html>
