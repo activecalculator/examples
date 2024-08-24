@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embed SDK with custom backend</title>
   <script>
+    // You can fetch the latest interest rates from your backend here
+    // For example: 
+    // async function fetchRates() {
+    //   const response = await fetch('https://api.yourbackend.com/rates');
+    //   window.interestRateMap = await response.json();
+    // }
+    // fetchRates();
+
     window.interestRateMap = {
       10: 3.5,
       15: 3.75,
@@ -13,14 +21,20 @@
     }
     
     window.addEventListener("activeCalculatorReady", function () {
+      // Get the calculator instance
       const calculatorInstance = activeCalculator.getInstance("cm01ccea50001mg0chpyziyke");
+      
+      // Get the loan term element instance
       const element = calculatorInstance.getElementInstance("UZ-fD48tjm8OzZNONtkdM");
 
+      // Listen for changes in the loan term
       element.on("valueChange", function (data) {
+        // Uncomment these lines for debugging
         // console.log("New value:", data.value);
         // console.log("Calculation data:", data.calculationData);
         // console.log("Response data:", data.responseData);
 
+        // Update the interest rate based on the selected loan term
         calculatorInstance.setAnswer("lT1VZA1-nCUCnlynX6ids", window.interestRateMap[data.value.value]);
       });
     });
