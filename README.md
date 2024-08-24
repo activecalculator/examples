@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.activecalculator.com">
-    <img width="120" alt="ActiveCalculator Logo" src="https://activecalculator.com/logo.png">
+    <img width="240" alt="ActiveCalculator Logo" src="https://activecalculator.com/logo.png">
   </a>
   <h3 align="center">ActiveCalculator Embed SDK Examples</h3>
 
