@@ -1,4 +1,4 @@
-# Morgage calculator with real-time interest rates
+# Mortgage calculator with real-time interest rates
 
 This repository demonstrates how to integrate the ActiveCalculator Embed SDK into a simple HTML page, showcasing dynamic interest rate updates based on loan terms.
 
